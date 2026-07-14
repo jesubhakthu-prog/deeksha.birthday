@@ -33,6 +33,7 @@ const endBtn = document.getElementById("endBtn");
 
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
+const fullscreenBtn = document.getElementById("fullscreenBtn");
 
 const progressBar = document.getElementById("progressBar");
 
@@ -101,6 +102,16 @@ startBtn.addEventListener("click",function(){
     scene1.classList.add("active");
 
     updateProgress(10);
+
+});
+
+fullscreenBtn.addEventListener("click", function () {
+
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
 
 });
 
@@ -210,6 +221,27 @@ noBtn.addEventListener("mouseover",function(){
     noMessages[noCount % noMessages.length];
 
     noCount++;
+
+});
+
+// Mobile support for NO button
+noBtn.addEventListener("touchstart", function(e){
+
+    e.preventDefault();
+
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+
+    yesSize += 0.15;
+    yesBtn.style.transform = `scale(${yesSize})`;
+
+    noBtn.innerText = messages[count % messages.length];
+
+    count++;
 
 });
 
@@ -520,7 +552,7 @@ function typeWriter(){
 
         letterPaper.scrollTop = letterPaper.scrollHeight;
 
-        setTimeout(typeWriter,150);
+        setTimeout(typeWriter,300);
 
     }
 
