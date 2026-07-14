@@ -1070,3 +1070,10 @@ button,
     transition:all .5s ease;
 
 }
+#fullscreenBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    width: 170px;
+}
