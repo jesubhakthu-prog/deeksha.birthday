@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= PROGRESS BAR ================= -->
+
+<div id="progressContainer">
+    <div id="progressBar"></div>
+</div>
+
+<!-- ================= BACKGROUND MUSIC ================= -->
+
+<audio id="bgMusic" loop>
+    <source src="music/background.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= MAIN MENU ================= -->
+
+<div id="menu" class="screen active">
+
+    <h1>🎂 Happy Birthday 🎂</h1>
+
+    <h2>Deeksha ❤️</h2>
+
+    <p class="subtitle">
+
+        A little birthday adventure made with lots of love...
+
+    </p>
+
+    <button id="startBtn">
+        🌸 Start Game
+    </button>
+
+    <button id="musicBtn">
+        🔊 Music ON
+    </button>
+
+</div>
+
+<!-- ================= SCENE 1 ================= -->
+
+<div id="scene1" class="screen">
+
+    <h1>🌸 Welcome 🌸</h1>
+
+    <p class="subtitle">
+
+        Today isn't just another day...
+
+        <br><br>
+
+        It's a journey filled with memories,
+        smiles,
+        laughter,
+        and lots of love. ❤️
+
+    </p>
+
+    <button id="continueBtn">
+        Continue →
+    </button>
+
+</div>
+
+<!-- ================= SCENE 2 ================= -->
+
+<div id="scene2" class="screen">
+
+    <h1>💖 Our Story 💖</h1>
+
+    <p class="subtitle">
+
+        Every beautiful story begins with
+        one small moment...
+
+        <br><br>
+
+        Today I want to relive
+        some of my favourite memories with you.
+
+    </p>
+
+    <button id="storyBtn">
+        Next ❤️
+    </button>
+
+</div>
+
+<!-- ================= SCENE 3 ================= -->
+
+<div id="scene3" class="screen">
+
+    <img src="images/photo1.jpeg" class="photo">
+
+    <h2>Our First Memory ❤️</h2>
+
+    <p class="subtitle">
+
+        Every smile of yours became
+        one of my happiest memories.
+
+    </p>
+
+    <button id="photo1Btn">
+        Next Memory →
+    </button>
+
+</div>
+
+<!-- ================= SCENE 4 ================= -->
+
+<div id="scene4" class="screen">
+
+    <img src="images/photo2.jpeg" class="photo">
+
+    <h2>Another Beautiful Memory ❤️</h2>
+
+    <p class="subtitle">
+
+        Every picture with you
+        reminds me how lucky I am.
+
+    </p>
+
+    <button id="photo2Btn">
+        Next Memory →
+    </button>
+
+</div>
+
+<!-- ================= SCENE 5 ================= -->
+
+<div id="scene5" class="screen">
+
+    <img src="images/photo3.jpeg" class="photo">
+
+    <h2>You're My Happiness ❤️</h2>
+
+    <p class="subtitle">
+
+        Some memories never fade.
+
+        <br><br>
+
+        Thank you for filling
+        my life with happiness.
+
+    </p>
+
+    <button id="photo3Btn">
+        Continue →
+    </button>
+
+</div>
+<!-- ================= SCENE 6 ================= -->
+
+<div id="scene6" class="screen">
+
+    <img src="images/photo4.jpeg" class="photo">
+
+    <h2>Forever My Favorite Person ❤️</h2>
+
+    <p class="subtitle">
+
+        Every moment with you becomes
+        a beautiful memory that I'll treasure forever.
+
+        <br><br>
+
+        Your happiness means the world to me.
+
+    </p>
+
+    <button id="photo4Btn">
+        Final Memory →
+    </button>
+
+</div>
+
+<!-- ================= SCENE 7 ================= -->
+
+<div id="scene7" class="screen">
+
+    <img src="images/photo5.jpeg" class="photo">
+
+    <h2>Happy Birthday, My Love ❤️🎂</h2>
+
+    <p class="subtitle">
+
+        Every picture reminds me
+        how special you are.
+
+        <br><br>
+
+        Thank you for making my life
+        brighter, happier and more beautiful.
+
+        <br><br>
+
+        Happy Birthday, potti ❤️
+
+    </p>
+
+    <button id="questionBtn">
+        One Last Surprise 💖
+    </button>
+
+</div>
+
+<!-- ================= SCENE 8 ================= -->
+
+<div id="scene8" class="screen">
+
+    <h1>💖 One Last Question 💖</h1>
+
+    <p class="subtitle">
+
+        Before your birthday surprise...
+
+        <br><br>
+
+        Will you stay with me forever? ❤️
+
+    </p>
+
+    <div class="buttons">
+
+        <button id="yesBtn">
+            YES ❤️
+        </button>
+
+        <button id="noBtn">
+            NO 😜
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= SCENE 9 ================= -->
+
+<div id="scene9" class="screen">
+
+    <h1 class="birthdayTitle">
+
+        🎉 Happy Birthday potti ❤️ 🎉
+
+    </h1>
+
+    <div id="cake" class="cake">
+        🎂
+    </div>
+
+    <p class="subtitle">
+
+        Wishing you a life filled with
+
+        love,
+
+        happiness,
+
+        success,
+
+        laughter,
+
+        and endless smiles.
+
+    </p>
+
+    <button id="letterBtn">
+
+        Read My Letter 💌
+
+    </button>
+
+</div>
+
+<!-- ================= SCENE 10 ================= -->
+
+<div id="scene10" class="screen">
+
+    <div class="envelopeContainer">
+
+        <div id="envelope" class="envelope">
+
+            <div class="envelopeFlap"></div>
+
+            <div class="letterPaper">
+
+                <div class="seal">
+
+                    ❤️
+
+                </div>
+
+                <p id="letterText"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button id="endBtn">
+
+        ❤️ Continue ❤️
+
+    </button>
+
+</div>
+
+<!-- ================= SCENE 11 ================= -->
+
+<div id="scene11" class="screen">
+
+    <h1>📸 Our Beautiful Memories ❤️</h1>
+
+    <img
+        id="memoryImage"
+        class="memoryImage"
+        src=""
+        alt="Memory">
+
+    <p id="memoryCaption" class="memoryCaption"></p>
+
+</div>
+
+<!-- ================= SCENE 12 ================= -->
+
+<div id="scene12" class="screen">
+
+    <h1>❤️ Thank You ❤️</h1>
+
+    <p class="subtitle">
+
+        Thank you for taking this little journey with me.
+
+        <br><br>
+
+        I hope this birthday surprise
+        made you smile.
+
+        <br><br>
+
+        Happy Birthday once again,
+        my beautiful potti.
+
+        <br><br>
+
+        I Love You Forever ❤️
+
+    </p>
+
+    <h2>Forever Yours 🌸</h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

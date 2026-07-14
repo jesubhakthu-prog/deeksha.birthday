@@ -1,0 +1,1072 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ffd6ec,
+        #ffe4f3,
+        #fff3f8,
+        #ffd0e7
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+/* =====================================================
+   Animated Background
+===================================================== */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* =====================================================
+   Screens
+===================================================== */
+
+.screen{
+
+    display:none;
+
+    width:100vw;
+    height:100vh;
+
+    position:relative;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px;
+
+    opacity:0;
+
+    transition:opacity .5s;
+
+}
+
+.screen.active{
+
+    display:flex;
+
+    opacity:1;
+
+}
+
+/* =====================================================
+   Glass Card
+===================================================== */
+
+.screen::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:85%;
+    max-width:950px;
+
+    height:82%;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:30px;
+
+    box-shadow:
+
+        0 20px 60px rgba(255,20,147,.18);
+
+    z-index:-1;
+
+}
+
+/* =====================================================
+   Fade Animation
+===================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   Headings
+===================================================== */
+
+h1{
+
+    font-size:58px;
+
+    color:#ff2f7d;
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+        0 5px 15px rgba(255,20,147,.25);
+
+}
+
+h2{
+
+    font-size:38px;
+
+    color:#ff4f9a;
+
+    margin:20px;
+
+}
+
+/* =====================================================
+   Paragraph
+===================================================== */
+
+.subtitle{
+
+    width:75%;
+
+    max-width:820px;
+
+    font-size:22px;
+
+    color:#444;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* =====================================================
+   Buttons
+===================================================== */
+
+button{
+
+    width:250px;
+
+    padding:16px;
+
+    margin:12px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            45deg,
+            #ff4f9a,
+            #ff80bf
+        );
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 12px 25px rgba(255,20,147,.25);
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+        0 0 20px hotpink,
+        0 0 40px pink;
+
+}
+
+/* =====================================================
+   Photo
+===================================================== */
+
+.photo{
+
+    width:320px;
+
+    height:430px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:8px solid white;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+        0 20px 45px rgba(255,20,147,.25);
+
+    animation:photoZoom 1s;
+
+}
+
+@keyframes photoZoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   YES / NO Buttons
+===================================================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:60px;
+
+}
+
+#yesBtn{
+
+    transition:.3s;
+
+}
+
+#noBtn{
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+/* =====================================================
+   Cake
+===================================================== */
+
+.cake{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    animation:bounce 1s infinite alternate;
+
+}
+
+.cake:hover{
+
+    transform:scale(1.15);
+
+}
+
+@keyframes bounce{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
+/* =====================================================
+   Progress Bar
+===================================================== */
+
+#progressContainer{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:8px;
+
+    background:rgba(255,255,255,.35);
+
+    z-index:99999;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            hotpink,
+            deeppink
+        );
+
+    transition:.6s;
+
+}
+
+/* =====================================================
+   Music Button
+===================================================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:180px;
+
+    z-index:99999;
+
+}
+
+/* =====================================================
+   Scrollbar
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:pink;
+
+    border-radius:20px;
+
+}
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.envelopeContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:75%;
+
+}
+
+.envelope{
+
+    width:700px;
+
+    height:420px;
+
+    background:#ffb6d9;
+
+    border-radius:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 60px rgba(255,20,147,.30);
+
+}
+
+/* =====================================================
+   Envelope Flap
+===================================================== */
+
+.envelopeFlap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:170px;
+
+    background:#ff82ba;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:5;
+
+}
+
+/* =====================================================
+   Letter Paper
+===================================================== */
+
+.letterPaper{
+
+    position:absolute;
+
+    left:20px;
+    right:20px;
+
+    top:20px;
+    bottom:20px;
+
+    background:
+        linear-gradient(
+            #fffdf8,
+            #ffeef5
+        );
+
+    border-radius:20px;
+
+    padding:45px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    scroll-behavior:smooth;
+
+}
+
+/* =====================================================
+   Letter Scrollbar
+===================================================== */
+
+.letterPaper::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.letterPaper::-webkit-scrollbar-track{
+
+    background:#ffe8f2;
+
+    border-radius:20px;
+
+}
+
+.letterPaper::-webkit-scrollbar-thumb{
+
+    background:#ff69b4;
+
+    border-radius:20px;
+
+}
+
+/* =====================================================
+   Letter Text
+===================================================== */
+
+#letterText{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:36px;
+
+    color:#5d3044;
+
+    line-height:2;
+
+    white-space:pre-wrap;
+
+    text-align:left;
+
+}
+
+/* =====================================================
+   Wax Seal
+===================================================== */
+
+.seal{
+
+    width:75px;
+
+    height:75px;
+
+    background:#ff2f7d;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 30px;
+
+    font-size:30px;
+
+    box-shadow:
+        0 0 20px hotpink;
+
+}
+
+/* =====================================================
+   MEMORY SLIDESHOW
+===================================================== */
+
+.memoryImage{
+
+    width:420px;
+
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:8px solid white;
+
+    box-shadow:
+        0 0 40px hotpink;
+
+    transition:opacity 1s;
+
+    animation:memoryFloat 3s ease-in-out infinite alternate;
+
+}
+
+.memoryCaption{
+
+    margin-top:30px;
+
+    max-width:800px;
+
+    font-size:36px;
+
+    color:#000;
+
+    font-family:'Dancing Script', cursive;
+
+    font-style:italic;
+
+    font-weight:700;
+
+    text-align:center;
+
+    line-height:1.8;
+
+    transition:opacity 1s;
+
+    text-shadow:none;
+
+}
+
+/* =====================================================
+   Floating Animation
+===================================================== */
+
+@keyframes memoryFloat{
+
+    from{
+
+        transform:translateY(0px);
+
+    }
+
+    to{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* =====================================================
+   THANK YOU SCENE
+===================================================== */
+
+#scene12 h1{
+
+    font-size:70px;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px hotpink;
+
+}
+
+#scene12 h2{
+
+    margin-top:40px;
+
+    color:#ff2f7d;
+
+    font-size:40px;
+
+}
+
+#scene12 .subtitle{
+
+    color:black;
+
+    font-size:26px;
+
+    line-height:2;
+
+}
+
+/* =====================================================
+   Fade Animation Helper
+===================================================== */
+
+.fade{
+
+    animation:fadeImage 1s;
+
+}
+
+@keyframes fadeImage{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    animation:floatHeart 8s linear forwards;
+
+    opacity:.7;
+
+    z-index:1;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =====================================================
+   SAKURA PETALS
+===================================================== */
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+
+    opacity:.9;
+
+    z-index:2;
+
+}
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        translateX(150px)
+        rotate(360deg);
+
+    }
+
+}
+
+/* =====================================================
+   CURSOR HEART
+===================================================== */
+
+.cursorHeart{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    font-size:18px;
+
+    z-index:9999;
+
+    animation:cursorFade .8s linear forwards;
+
+}
+
+@keyframes cursorFade{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-90%)
+        scale(.2);
+
+    }
+
+}
+
+/* =====================================================
+   CLICK SPARKLES
+===================================================== */
+
+.sparkle{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    font-size:20px;
+
+    z-index:9999;
+
+    animation:sparkleAnim .9s ease-out forwards;
+
+}
+
+@keyframes sparkleAnim{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(var(--x),var(--y))
+        scale(.2);
+
+    }
+
+}
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    animation:confettiFall 3s linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+    }
+
+}
+
+/* =====================================================
+   FIREWORKS
+===================================================== */
+
+.firework{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:explode 1.5s ease-out forwards;
+
+}
+
+@keyframes explode{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(0);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(var(--x),var(--y))
+        scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+h1{
+
+    font-size:36px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+.subtitle{
+
+    width:90%;
+
+    font-size:18px;
+
+}
+
+.photo{
+
+    width:250px;
+
+    height:330px;
+
+}
+
+.memoryImage{
+
+    width:260px;
+
+    height:340px;
+
+}
+
+button{
+
+    width:220px;
+
+    font-size:18px;
+
+}
+
+.envelope{
+
+    width:95%;
+
+    height:350px;
+
+}
+
+#letterText{
+
+    font-size:24px;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+}
+
+/* =====================================================
+   SMOOTH TRANSITIONS
+===================================================== */
+
+.screen,
+.photo,
+.memoryImage,
+button,
+.envelope,
+.letterPaper{
+
+    transition:all .5s ease;
+
+}
